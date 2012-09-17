@@ -1,0 +1,16 @@
+*.exe
+*.lib
+*.obj
+*.sln
+*.ncb
+*.suo
+Debug/
+Release/
+*.jpg
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.vcproj
+*.user
+Hercules Backup/
