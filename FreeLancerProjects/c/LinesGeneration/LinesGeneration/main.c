@@ -11,7 +11,6 @@
 
 struct Point possiblePoints[10000];
 
-// виводит меню
 void PrintMenu()
 {
 	printf("Menu:\n");
@@ -26,7 +25,6 @@ void PrintMenu()
 	printf("\nYour choise >:");
 }
 
-// функция считывает одну точку
 struct Point ReadPoint()
 {
 	struct Point p;
@@ -36,7 +34,6 @@ struct Point ReadPoint()
 	TransformPoint(&p);
 	
 
-	// убрать символ с потока
 	getchar();
 
 	return p;
@@ -58,26 +55,20 @@ int main ()
 	{
 		PrintMenu();
 		
-		// считать выбор пользователя
 		scanf("%c", &c);
-		// убрать символ с потока
 		getchar();
 		
 		switch (c)
 		{
 		case 'p':
-			// вивести псевдоекран
 			PrintScreen();
 			break;
 
 		case 'c':
-			// очистить псевдоекран
 			ClearScreen();
 			break;
 
 		case 'b':
-			// алгоритм Брезенхэма
-			// считать точки и нарисовать отрезок
 
 			printf("Enter first point of segment:\n");
 			p1 = ReadPoint();
@@ -103,8 +94,6 @@ int main ()
 			break;
 
 		case 'd':
-			// алгоритм ЦДА
-			// считать точки и нарисовать отрезок
 
 			printf("Enter first point of segment:\n");
 			p1 = ReadPoint();
@@ -145,7 +134,6 @@ int main ()
 			printf("Done...\n\n");
 	}
 
-	// задержать закривание консоли до того, как пользователь нажмет Enter
 	printf("Press \"Enter\" to exit...");
 	getch();
 

@@ -8,18 +8,17 @@
 struct Point Points[MAX_EDGE_COUNT];
 int PointsSize = 0;
 
-struct Point sample1[3];//NewPoint(-5, -3), NewPoint(5, -3), NewPoint(0, 5)};
+struct Point sample1[3];
 int sample1Size = 3;
 
-struct Point sample2[4];// = {NewPoint(-2, -2), NewPoint(-2, 2), NewPoint(2, 2), NewPoint(2, -2)};
+struct Point sample2[4];
 int sample2Size = 4;
 
-struct Point sample3[5];// = {NewPoint(-2, -3), NewPoint(-5, 2), NewPoint(0, 7), NewPoint(5, 2), NewPoint(2, -3)};
+struct Point sample3[5];
 int sample3Size = 5;
 
 struct Point zeroPoint;
 
-// функция считывает одну точку
 struct Point ReadOnePoint()
 {
 	struct Point p;
@@ -28,7 +27,6 @@ struct Point ReadOnePoint()
 
 	TransformPoint(&p);
 
-	// убрать символ с потока
 	getchar();
 
 	return p;
@@ -77,7 +75,6 @@ void InitSamples()
 		TransformPoint(&sample3[i]);
 }
 
-// функция считывает весь полигон
 void ReadPolygon()
 {
 	int edgeNumber;
@@ -132,14 +129,12 @@ int main()
 			printf("Your point does not belong to polygon!\n");
 			printf("Error! Exiting...\n");
 	
-			// задержать закривание консоли до того, как пользователь нажмет Enter
 			printf("Press \"Enter\" to exit...");
 			getch();
 	
 			return 0;
 		}
 		
-		// заполнить полигон
 		FillPolygon(Points, PointsSize, p.x, p.y);
 	
 		PrintScreen();
@@ -189,7 +184,6 @@ int main()
 		PrintScreen();
 	}
 	
-	// задержать закривание консоли до того, как пользователь нажмет Enter
 	printf("Press \"Enter\" to exit...");
 	getch();
 

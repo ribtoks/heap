@@ -5,32 +5,25 @@
 #include <conio.h>
 #include <string.h>
 
-// максимальная длина пути к файлам
 #define MAX_FILEPATH_LENGTH 1000
 
-// строки - пути к файлам
 char inputFileName[MAX_FILEPATH_LENGTH];
 char outputFileName[MAX_FILEPATH_LENGTH];
 
-//-----------------------------------------------------------------
 
-// запустить кодирование файла
 void RunEncodeFile(const char* fileName)
 {
 	strcat(outputFileName, fileName);
-	// попытатся закодировать входной файл
 	EncodeFile(strcat(inputFileName, fileName), strcat(outputFileName, ".myarchive"));
 
 	remove(fileName);
 	rename(outputFileName, fileName);
 }
 
-// запустить декодирование файла
 void RunDecodeFile(const char* fileName)
 {
 	strcat(outputFileName, fileName);
 
-	// попытатся разархивировать входной файл
 	DecodeFile(strcat(inputFileName, fileName), strcat(outputFileName, ".unpacked"));
 
 	remove(fileName);
@@ -49,7 +42,6 @@ int main (int argc, char *argv[])
 
 		printf("Sample \"ArithmeticEncoding.exe C:\\test.txt e\"\n\n");
 
-		// задержать закривание консоли до того, как пользователь нажмет Enter
 		printf("Press \"Enter\" to exit...");
 		getch();
 		return 0;
@@ -63,7 +55,6 @@ int main (int argc, char *argv[])
 		if (c == 'd')
 			RunDecodeFile(argv[1]);
 	
-	// задержать закривание консоли до того, как пользователь нажмет Enter
 	printf("Press \"Enter\" to exit...");
 	getch();
 
