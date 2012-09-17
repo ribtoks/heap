@@ -1,0 +1,34 @@
+/*
+	Указатель на функцию сравнения елементов масива
+
+	Возвращает 
+	-значение больше нуля, если 
+	  первый елемент больше второго
+	-ноль, если они равны
+	-значение меньше нуля, если 
+	  первый меньше второго
+*/
+typedef int (CompareFunction) (const void*, const void*);
+
+/*
+	Прототип функции сортировки вставкой
+
+	Входные параметры:
+	arr - входной массив
+	arrSize - размер входного массива
+	elemntSize - размер елемента масива
+	compFunc - указатель на функцию сравнения елементов
+*/
+void InsertSort(void* arr, int arrSize, int elementSize, CompareFunction compFunc);
+
+
+/*
+	Прототип функции пузырьковой сортировки
+
+	Входные параметры:
+	arr - входной массив
+	arrSize - размер входного массива
+	elemntSize - размер елемента масива
+	compFunc - указатель на функцию сравнения елементов
+*/
+void BubbleSort(void* arr, int arrSize, int elementSize, CompareFunction compFunc);
