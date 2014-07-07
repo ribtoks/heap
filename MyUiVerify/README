@@ -1,0 +1,1 @@
+Simple analog of visualuiaverify tool from Microsoft. This application uses .NET framework's UIAutomation lib instead of COM wrapper the visualuiaverify has.
