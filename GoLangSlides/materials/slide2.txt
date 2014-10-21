@@ -1,0 +1,16 @@
+Principes of Go
+---------------
+
+Go is:
+Simple
+- concepts are easy to understand
+- (the implementation might still be sophisticated)
+Orthogonal
+- concepts mix cleanly
+- easy to understand and predict what happens
+Succinct
+- no need to predeclare every intention
+Safe
+- misbehavior should be detected
+
+

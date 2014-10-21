@@ -1,0 +1,50 @@
+Why Go? Why is Go?
+------------------
+
+People at Google saw a need for a new systems language.
+
+System programming has become too difficult and too frustrating.
+
+Aim to be easy: combine ease of programming of an interpreted, dynamically typed language with efficiency and safety of a statically typed, compiled language.
+
+Aim to be modern: support for networking and multi-core computing.
+
+Aim to be fast: fast builds, fast execution.
+
+
+
+Multiplatform, well-documented common library, ideal for beginners' first
+language
+
+ Go:
+ can be used for systems programming
+ is a good fit for game server development
+ can be used for Complex event processing
+ is also a general programming language, useful for solving text-processing problems, making web apps, or even scripting-like applications
+
+However, Go is not suited for real-time software because of its garbage
+collection and automatic memory allocation.
+
+
+feel of dynamic language like Ruby or Python, but has type safety which is not
+present in Ruby or Python
+
+
+Problems aimed to be solved with Go:
+
+** Development speed (compilation time is super fast, implicit implementation of
+interfaces - no header files, a lot of compile time mistakes to avoid pitfalls)
+
+** Modernization (C++ 1979. Python 1989. Java 1990. Ruby 1993)
+
+
+** Complexity (
+    How many loop keywords are there? 1 for
+    Why Garbage Collection? Because it’s easier while working with concurrency.
+    Why eliminate inheritance? Because it’s inflexible to change and composition is almost always better.
+    How many keywords? 25. vs 50 in Java and 48 in C++ Expressiveness of Go
+    Why CSP model for concurrency? Because mutexes and locking are a hard
+    paradigm to get right.
+
+    almost mathematical notation http://en.wikipedia.org/wiki/Communicating_sequential_processes
+)

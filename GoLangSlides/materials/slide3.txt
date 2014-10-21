@@ -1,0 +1,13 @@
+Differences with C++
+(implicit things gone)
+
+- pointers but no pointer arithmetic
+- p++ is a statement, not expression (no concusion about order of evaluation)
+- no implicit numerical conversions
+- constants are just numbers (no size of sign, high precision, truncated or
+rounded when assigned)
+- methods are declared like ordinary functions with receiver, methods are not
+mixed with data definition
+- interfaces are abstract, everything other is concrete, interfaces are
+satisfied implicitly (compile time duck typing)
+- 
