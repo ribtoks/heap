@@ -10,4 +10,5 @@ rounded when assigned)
 mixed with data definition
 - interfaces are abstract, everything other is concrete, interfaces are
 satisfied implicitly (compile time duck typing)
-- 
+- printf %v
+- multiple return values
