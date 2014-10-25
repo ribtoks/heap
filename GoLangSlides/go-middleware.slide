@@ -18,12 +18,25 @@ kushnirTV@gmail.com
 
 * Коротко про мову Go
 
-- виглядає динамічно типізованою, проста для програміста
-- кросплатформенна
-- Open Source
-- компільована, статично типізована  мова програмування із автоматичним звільненням пам'яті
-- мова програмування від Google створена для вирішення проблем Google
-- специфікацію можна прочитати повністю за короткий час
+* Кросплатформенна
+
+.image ./materials/cross-platform.png _ 1000
+
+* Open Source
+
+.image ./materials/Open_Source_Initiative.png _ 500
+
+* Вирішення проблем Google
+
+.image ./materials/Google_logo.png _ 500
+
+* Специфікація
+
+.image ./materials/golang_spec.png _ 1200
+
+* Duck typing
+
+.image ./materials/duck_typing.png _ 700
 
 * Hello, world
 
@@ -37,7 +50,6 @@ kushnirTV@gmail.com
 - відсутність заголовочних файлів за рахунок неявної реалізації інтерфейсу
 - величезна кількість помилок виявляється на етапі компіляції
 - дотичність версій мов (CPython тощо)
-
 
 * Сучасність
 
@@ -71,13 +83,14 @@ C++ 1979, Python 1989, Java 1990, Ruby 1993
 - неявні приведення типів відсутні
 - константи
     const Ln2 = 0.693147180559945309417232121458176568075500134360255254120680009
-- %v
-    fmt.Printf("%v %v out of %v", 4.5, "percent", 100)
-    // 4.5 percent out of 100
 
-- повернення кількох результатів у функції
-    n, err = buf.Read(100)
-    n, _   = buf.Read(100)
+* Defer
+
+.play ./materials/defer-demo.go /START OMIT/,/END OMIT/
+
+* Повернення кількох значень у функції
+
+.play ./materials/multiple-return-demo.go /START OMIT/,/END OMIT/
     
 * Дані та функції
 
@@ -102,6 +115,11 @@ Duck typing на етапі компіляції
 
 * Multicore programming
 
+* Модель CSP (Communicating Sequential Processes) 1978
+
+.image ./materials/Sir_Tony_Hoare.jpg _ 500
+.caption _Sir_Tony_Hoare_
+
 * Модель CSP (Communicating Sequential Processes)
 
 - формальна математична мова
@@ -118,6 +136,10 @@ Duck typing на етапі компіляції
      a -> P  ||  b -> Q
 - недетерміністичні
      a -> P   |||   b -> Q
+
+* Типізований Pipe
+
+// TODO
 
 * Підтримка CSP в Go: channels, goroutines
 
@@ -140,3 +162,15 @@ Read from a channel:
 - простий синтаксис
 - немає переповнення стеку
 - Garbage collection запобігає проблемам звільнення пам'яті
+
+* Goroutines
+
+.play ./materials/goroutine-demo.go
+
+* Goroutines
+
+.play ./materials/goroutine-demo2.go /START OMIT/,/END OMIT/
+
+* Channels
+
+.play ./materials/channel-demo.go /START OMIT/,/END OMIT/
