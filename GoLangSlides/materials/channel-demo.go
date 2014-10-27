@@ -8,7 +8,8 @@ import (
 // START OMIT
 
 func read(values chan int) {
-  for a := range values { // HL
+  for {
+    a := <- values // HL
     fmt.Println(a)
   }
 }
@@ -18,7 +19,7 @@ func write(values chan int) {
   for {
     values <- i // HL
     i++
-    time.Sleep(1 * time.Second)
+    time.Sleep(500 * time.Millisecond)
   }
 }
 
@@ -28,7 +29,7 @@ func main() {
   go read(ints) // HL
   go write(ints) // HL
 
-  time.Sleep(5 * time.Second)
+  time.Sleep(2 * time.Second)
 }
 
 // END OMIT

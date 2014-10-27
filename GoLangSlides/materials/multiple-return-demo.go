@@ -4,7 +4,7 @@ import "fmt"
 
 // START OMIT
 
-func test(a int, b float64, l string) (c int, d float64, s string) {
+func duplicate(a int, b float64, l string) (c int, d float64, s string) {
   c, d = a * 2, b * 2
   s = l + l
 
@@ -12,7 +12,7 @@ func test(a int, b float64, l string) (c int, d float64, s string) {
 }
 
 func main() {
-  a, b, s := test(1, 2.0, "test")
+  a, b, s := duplicate(1, 2.0, "test")
   fmt.Printf("%v, %v, \"%v\"", a, b, s)
 }
 
