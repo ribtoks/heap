@@ -195,3 +195,48 @@ Read from a channel:
 * Channels
 
 .play ./materials/channel-demo.go /START OMIT/,/END OMIT/
+
+* Go та C++
+
+.play ./materials/basic-cpp-demo.go /START OMIT/,/END OMIT/
+
+* Go та C++
+
+.code ./materials/cpp-demo.h
+
+Go:
+
+.play ./materials/cpp-demo.go /START OMIT/,/END OMIT/
+
+* Go в щоденному програмуванні
+
+* Pass by value
+
+.play ./materials/pass-by-value.go
+
+* Math
+
+.image ./materials/go-math-float64.png _ 800
+
+* Debugging
+
+.image ./materials/debug.png
+
+    Although we will endeavor to keep basic gdb functionality (stack traces,
+    printing values) working on supported platforms, the ability to use the
+    debugger to understand a Go program's full environment will likely never
+    work, and improving gdb support is not a priority for the team.
+    -rob
+
+- GDB
+- Eclipse
+- Zeus
+
+* IDE
+
+.image ./materials/vim_emacs.png
+
+- Emacs, VIM
+- LiteIDE, Sublime, Intellij
+
+[[http://www.reddit.com/r/golang/comments/2739gp/golang_ides/][Go's IDE at Reddit]]
