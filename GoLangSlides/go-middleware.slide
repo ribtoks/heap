@@ -8,43 +8,43 @@ kushnirTV@gmail.com
 
 * Задача
 
-.image ./materials/CoordinatorScheme.png
+.image materials/CoordinatorScheme.png
 .caption _Load_Balancing_Problem_
 
 * Рішення
 
-.image ./materials/CoordinatorWithGoScheme.png
+.image materials/CoordinatorWithGoScheme.png
 .caption _Load_Balancing_Problem_
 
 * Коротко про мову Go
 
 * Кросплатформенна
 
-.image ./materials/cross-platform.png _ 1000
+.image materials/cross-platform.png _ 1000
 
 * Open Source
 
-.image ./materials/Open_Source_Initiative.png _ 500
+.image materials/Open_Source_Initiative.png _ 500
 
 * Вирішення проблем Google
 
-.image ./materials/Google_logo.png _ 500
+.image materials/Google_logo.png _ 500
 
 * Специфікація
 
-.image ./materials/golang_spec.png _ 550
+.image materials/golang_spec.png _ 550
 
 * Duck typing
 
-.image ./materials/duck_typing.png _ 700
+.image materials/duck_typing.png _ 700
 
 * Hello, world
 
-.code ./materials/helloworld.go
+.code materials/helloworld.go
 
 *Hello*world*2.0*
 
-.code ./materials/helloworld2.go
+.code materials/helloworld2.go
 
 * Проблеми, які мав вирішити Go
 
@@ -77,13 +77,13 @@ C++ 1979, Python 1989, Java 1990, Ruby 1993
 
 1. for
 
-.code ./materials/for_keyword_demo.go  /START OMIT/,/END OMIT/
+.code materials/for_keyword_demo.go  /START OMIT/,/END OMIT/
 
 * Ключові слова
 
 - Скільки в Go ключових слів? - 25 (в С++ 48, в Java 50)
 
-.image ./materials/golang_spec_keywords.png _ 1200
+.image materials/golang_spec_keywords.png _ 1200
 .caption _Ключові_слова_в_Go_
 
 * Складність програмування
@@ -102,25 +102,25 @@ C++ 1979, Python 1989, Java 1990, Ruby 1993
 
 * Константи
 
-.play ./materials/constants_demo.go /START OMIT/,/END OMIT/
+.play materials/constants_demo.go /START OMIT/,/END OMIT/
 
 * Defer
 
-.play ./materials/defer-demo.go /START OMIT/,/END OMIT/
+.play materials/defer-demo.go /START OMIT/,/END OMIT/
 
 * Повернення кількох значень, ініціалізація, %v
 
-.play ./materials/multiple-return-demo.go /START OMIT/,/END OMIT/
+.play materials/multiple-return-demo.go /START OMIT/,/END OMIT/
     
 * Дані та функції
 
 Функції та дані ортогональні
 
-.code ./materials/data_and_functions.go /START OMIT/,/END OMIT/
+.code materials/data_and_functions.go /START OMIT/,/END OMIT/
 
 Duck typing на етапі компіляції
 
-.code ./materials/data_and_interface.go /START OMIT/,/END OMIT/
+.code materials/data_and_interface.go /START OMIT/,/END OMIT/
 
 * Видимість імен
 
@@ -137,7 +137,7 @@ Duck typing на етапі компіляції
 
 * Модель CSP (Communicating Sequential Processes) 1978
 
-.image ./materials/Sir_Tony_Hoare.jpg _ 500
+.image materials/Sir_Tony_Hoare.jpg _ 500
 .caption _Sir_Tony_Hoare_
 
 * Модель CSP (Communicating Sequential Processes)
@@ -159,7 +159,7 @@ Duck typing на етапі компіляції
 
 * Типізований Pipe
 
-.image ./materials/pipe.png _ 1000
+.image materials/pipe.png _ 1000
 .caption _Channel_model_in_Go_
 
 * Підтримка CSP в Go: channels, goroutines
@@ -186,41 +186,41 @@ Read from a channel:
 
 * Goroutines
 
-.play ./materials/goroutine-demo.go
+.play materials/goroutine-demo.go
 
 * Goroutines
 
-.play ./materials/goroutine-demo2.go /START OMIT/,/END OMIT/
+.play materials/goroutine-demo2.go /START OMIT/,/END OMIT/
 
 * Channels
 
-.play ./materials/channel-demo.go /START OMIT/,/END OMIT/
+.play materials/channel-demo.go /START OMIT/,/END OMIT/
 
 * Go та C++
 
-.play ./materials/basic-cpp-demo.go /START OMIT/,/END OMIT/
+.play materials/basic-cpp-demo.go /START OMIT/,/END OMIT/
 
 * Go та C++
 
-.code ./materials/cpp-demo.h
+.code materials/cpp-demo.h
 
 Go:
 
-.play ./materials/cpp-demo.go /START OMIT/,/END OMIT/
+.play materials/cpp-demo.go /START OMIT/,/END OMIT/
 
 * Go в щоденному програмуванні
 
 * Pass by value
 
-.play ./materials/pass-by-value.go
+.play materials/pass-by-value.go
 
 * Math
 
-.image ./materials/go-math-float64.png _ 800
+.image materials/go-math-float64.png _ 800
 
 * Debugging
 
-.image ./materials/debug.png
+.image materials/debug.png
 
     Although we will endeavor to keep basic gdb functionality (stack traces,
     printing values) working on supported platforms, the ability to use the
@@ -234,7 +234,7 @@ Go:
 
 * IDE
 
-.image ./materials/vim_emacs.png
+.image materials/vim_emacs.png
 
 - Emacs, VIM
 - LiteIDE, Sublime, Intellij
