@@ -1,10 +1,11 @@
 Go'ing easy
 
 Про досвід розробки на Go координатора розподілених обчислень
-Tags: go golang
+Tags: go, golang, middleware
 
 Тарас Кушнір
 kushnirTV@gmail.com
+https://github.com/Ribtoks
 
 * Задача
 
@@ -93,12 +94,33 @@ C++ 1979, Python 1989, Java 1990, Ruby 1993
 
 * Відмінності від С/С++
 
+* Оголошення змінних
+
+    var a int
+
+або
+
+    s := "text"
+
+функції
+
+    func f(a int, s string) {
+    }
+
+Типи даних
+
+    type MyType struct {
+        a, b int
+        text string
+    }
+    
+
 * Вказівники
 
 - вказівники важливі для швидкодії, арифметика вказівників - ні
 - можна тримати вказівник на частину struct
-- інструкція, а не вираз
-    p++
+- інкремент - інструкція, а не вираз
+    f(p++) та q[++i]
 
 * Константи
 
@@ -218,6 +240,27 @@ Go:
 
 .image materials/go-math-float64.png _ 800
 
+* Виклики C++
+
+Інтерфейс
+
+    void traceRays(void *computator, long long startIndex, long long endIndex, float **results);
+
+Виклик:
+
+    resultsPtr := (**C.float)(unsafe.Pointer((&refResults[0])))
+    
+    C.traceRays(computator.p, C.longlong(startIndex), C.longlong(endIndex), resultsPtr)
+
+* IDE
+
+.image materials/vim_emacs.png
+
+- Emacs, Vim
+- LiteIDE, Sublime, Intellij
+
+[[http://www.reddit.com/r/golang/comments/2739gp/golang_ides/][Go's IDE at Reddit]]
+
 * Debugging
 
 .image materials/debug.png
@@ -232,11 +275,15 @@ Go:
 - Eclipse
 - Zeus
 
-* IDE
+* Load Balancer
 
-.image materials/vim_emacs.png
+- пасивний режим
+- keep alive status
+- priority queue
+- [[https://talks.golang.org/2012/concurrency.slide][Go Concurrency Patterns]]
+- [[https://github.com/eleks/goordinator][Goordinator at GitHub]]
+- [[http://elekslabs.com][Стаття на EleksLabs]]
 
-- Emacs, VIM
-- LiteIDE, Sublime, Intellij
+* Raytracer
 
-[[http://www.reddit.com/r/golang/comments/2739gp/golang_ides/][Go's IDE at Reddit]]
+.image materials/scene.png
