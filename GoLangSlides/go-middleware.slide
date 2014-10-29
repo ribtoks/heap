@@ -220,9 +220,11 @@ Read from a channel:
 
 * Go та C++
 
+* Базові виклики
+
 .play materials/basic-cpp-demo.go /START OMIT/,/END OMIT/
 
-* Go та C++
+* Параметри компіляції
 
 .code materials/cpp-demo.h
 
@@ -252,6 +254,10 @@ Go:
     
     C.traceRays(computator.p, C.longlong(startIndex), C.longlong(endIndex), resultsPtr)
 
+* Логування
+
+.code materials/logfile-demo.go /START OMIT/,/END OMIT/
+    
 * IDE
 
 .image materials/vim_emacs.png
