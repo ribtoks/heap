@@ -1,0 +1,9 @@
+{
+  "name": "copy-image-title-addon",
+  "title": "copy-image-title-addon",
+  "id": "jid1-pGAlvZHOXPh3qw",
+  "description": "Addon adds contex menu item to copy image title to clipboard",
+  "author": "",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
