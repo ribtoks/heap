@@ -5,11 +5,8 @@ import os
 from gimpfu import *
 
 def process_image(timg, minsize, savecopy):
-    currentWidth = timg.width
-    currentHeight = timg.height
-
-    newWidth = currentWidth
-    newHeight = currentHeight
+    currentWidth = float(timg.width)
+    currentHeight = float(timg.height)
 
     r = math.sqrt(currentWidth*currentHeight / float(minsize))
 
@@ -23,7 +20,7 @@ def process_image(timg, minsize, savecopy):
         basefilename, _ = os.path.splitext(filename)
         new_filename = os.path.join(directory, basefilename + "_s.jpg")
 
-        tdrawable = pdb.gimp_image_get_active_layer(timg)
+        tdrawable = pdb.gimp_image_flatten(timg)
         pdb.file_jpeg_save(timg, tdrawable, new_filename, new_filename,
                            1.0, 0, 0, 0, "", 0, 0, 0, 0)
 
