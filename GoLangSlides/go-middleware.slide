@@ -179,11 +179,6 @@ Duck typing на етапі компіляції
 - недетерміністичні
      a -> P   |||   b -> Q
 
-* Типізований Pipe
-
-.image materials/pipe.png _ 1000
-.caption _Channel_model_in_Go_
-
 * Підтримка CSP в Go: channels, goroutines
 
 Start a goroutine:
@@ -197,6 +192,11 @@ Send to a channel:
 Read from a channel:
 
     value = <-ch
+    
+* Типізований Pipe
+
+.image materials/pipe.png _ 1000
+.caption _Channel_model_in_Go_
 
 * Особливості
 
