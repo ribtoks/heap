@@ -113,7 +113,7 @@ C++ 1979, Python 1989, Java 1990, Ruby 1993
         a, b int
         text string
     }
-    
+
 
 * Вказівники
 
@@ -133,7 +133,7 @@ C++ 1979, Python 1989, Java 1990, Ruby 1993
 * Повернення кількох значень, ініціалізація, %v
 
 .play materials/multiple-return-demo.go /START OMIT/,/END OMIT/
-    
+
 * Дані та функції
 
 Функції та дані ортогональні
@@ -250,14 +250,14 @@ Go:
 
 Виклик:
 
-    resultsPtr := (**C.float)(unsafe.Pointer((&refResults[0])))
-    
+    resultsPtr := (**C.float)(unsafe.Pointer(&refResults[0]))
+
     C.traceRays(computator.p, C.longlong(startIndex), C.longlong(endIndex), resultsPtr)
 
 * Логування
 
 .code materials/logfile-demo.go /START OMIT/,/END OMIT/
-    
+
 * IDE
 
 .image materials/vim_emacs.png
