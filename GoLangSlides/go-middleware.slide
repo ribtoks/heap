@@ -203,12 +203,12 @@ Read from a channel:
 
     value = <-ch
 
-* Типізований Pipe
+* Channel: типізований Pipe
 
 .image materials/pipe.png _ 1000
 .caption _Channel_model_in_Go_
 
-* Особливості
+* Goroutine: fiber/thread
 
 - стек росте по мірі необхідності
 - замикання прості за рахунок ортогональності функції
