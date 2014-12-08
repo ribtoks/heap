@@ -131,6 +131,12 @@ C++ 1979, Python 1989, Java 1990, Ruby 1993
 - можна тримати вказівник на частину struct
 - інкремент - інструкція, а не вираз
     f(p++) та q[++i]
+- вказівники на функції
+    int (*fp)(int a, int b);
+    int (*fp)(int (*ff)(int x, int y), int b);
+В Go:
+
+    f func(func(int,int), int) int
 
 * Константи
 
