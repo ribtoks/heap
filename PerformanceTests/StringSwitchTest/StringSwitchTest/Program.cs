@@ -88,7 +88,7 @@ namespace StringSwitchTest
         static void Main(string[] args)
         {
             int tons = 10000000;
-            var items = GenerageTonsOfItems(tons);
+            var items = GenerateTonsOfItems(tons);
 
             // ensure methods are jit-byte-compiled
             var item1 = MapStringByDict("item2");
@@ -125,7 +125,7 @@ namespace StringSwitchTest
             }
         }
 
-        private static List<MyClass> GenerageTonsOfItems(int tonsNumber)
+        private static List<MyClass> GenerateTonsOfItems(int tonsNumber)
         {
             Random rand = new Random(DateTime.Now.Millisecond);
             var items = new List<MyClass>(tonsNumber);
