@@ -26,7 +26,7 @@ IFS=$(echo -en "\n\b")
 for file in `ls -1 $IMAGES_DIR | sed -e 's/\..*$//' | sort | uniq`; do
     if [ "$file" != "$ARCHIVES_DEFAULT" ] && [ "$file" != "$script" ] && [ ! -e "$ARCHIVE_DIR/$file.zip" ] && [ ! -d "$file" ]; then
         echo "Working with $file..."
-        find "$IMAGES_DIR" -maxdepth 1 -name "$file*" -print | zip "$file" -@
+        find "$IMAGES_DIR" -maxdepth 1 -name "$file*" ! -name "*.xpks" -print | zip "$file" -@
         mv "$file.zip" "$ARCHIVE_DIR"
     fi
 done
