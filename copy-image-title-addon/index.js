@@ -12,4 +12,3 @@ var menuItem = contextMenu.Item({
         clipboard.set(imageTitle)
     }
 });
-

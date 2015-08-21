@@ -1,9 +1,13 @@
 {
+  "title": "Copy Image Title Addon",
   "name": "copy-image-title-addon",
-  "title": "copy-image-title-addon",
-  "id": "jid1-pGAlvZHOXPh3qw",
-  "description": "Addon adds contex menu item to copy image title to clipboard",
-  "author": "",
-  "license": "MPL 2.0",
-  "version": "0.1"
+  "version": "0.0.1",
+  "description": "Copies image title to clipboard",
+  "main": "index.js",
+  "author": "Taras Kushnir",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT"
 }
