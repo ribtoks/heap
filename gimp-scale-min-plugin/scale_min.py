@@ -37,7 +37,10 @@ def plugin_main(minsize=6000000, savecopy=TRUE, processdir=TRUE, dirname=""):
             except Exception, error:
                 print error
     else:
-        process_image(img, minsize, savecopy)
+        image_list = gimp.image_list()
+        if len(image_list) > 0:
+            img = image_list[0]
+            process_image(img, minsize, savecopy)
 
 register(
     "python_fu_resize_max",
