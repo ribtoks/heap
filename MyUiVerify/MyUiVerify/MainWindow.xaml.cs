@@ -32,5 +32,10 @@ namespace MyUiVerify
             scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
             e.Handled = true;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ScreenElementHighlighter.ClearHighlight();
+        }
     }
 }
