@@ -13,6 +13,7 @@ def process_image(timg, minsize, savecopy):
     newWidth = float(math.ceil(currentWidth / r))
     newHeight = float(math.ceil(currentHeight / r))
 
+    pdb.gimp_context_set_interpolation(INTERPOLATION_LANCZOS)
     pdb.gimp_image_scale(timg, newWidth, newHeight)
 
     if savecopy:
