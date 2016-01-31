@@ -115,6 +115,66 @@ namespace MyUiVerify
             }
         }
 
+        public bool IsWidthChangable
+        {
+            get
+            {
+                bool result = false;
+
+                try
+                {
+                    var pattern = m_SourceElement.GetCurrentPattern(TransformPattern.Pattern);
+                    var transformPattern = pattern as TransformPattern;
+                    result = transformPattern != null && transformPattern.Current.CanResize;
+                }
+                catch { }
+                
+                return result;
+            }
+        }
+
+        public double ElementWidth
+        {
+            get
+            {
+                double width = 0;
+                try
+                {
+                    var rect = m_SourceElement.Current.BoundingRectangle;
+                    width = rect.Width;
+                }
+                catch { }
+
+                return width;
+            }
+
+            set
+            {
+                double width = 0, height = 0;
+                
+                try
+                {
+                    var rect = m_SourceElement.Current.BoundingRectangle;
+                    width = rect.Width;
+                    height = rect.Height;
+                }
+                catch 
+                {
+                    return;
+                }
+
+                if (Math.Abs(width - value) > 0.0001)
+                {
+                    var transformPattern = m_SourceElement.GetCurrentPattern(TransformPattern.Pattern) as TransformPattern;
+                    if (transformPattern != null && transformPattern.Current.CanResize)
+                    {
+                        transformPattern.Resize(value, height);
+                        OnPropertyChanged(() => ElementWidth);
+                    }
+                }                
+            }
+        }
+
         #endregion
 
         public TreeAutomationElementViewModel(AutomationElement sourceElement, TreeAutomationElementViewModel parentElement, TreeWalker treeWalker, bool lazyLoad)
@@ -197,13 +257,27 @@ namespace MyUiVerify
         {
             var propertiesDict = new Dictionary<string, string>();
             var currentNode = m_SourceElement.Current;
-            
-            propertiesDict.Add("ClassName", currentNode.ClassName);
-            propertiesDict.Add("ControlType", currentNode.ControlType.ProgrammaticName);
-            propertiesDict.Add("AutomationId", currentNode.AutomationId);
-            propertiesDict.Add("ProcessId", currentNode.ProcessId.ToString(CultureInfo.InvariantCulture));
+
+            AddKeySafe(propertiesDict, "ClassName", () => currentNode.ClassName);
+            AddKeySafe(propertiesDict, "ControlType", () => currentNode.ControlType.ProgrammaticName);
+            AddKeySafe(propertiesDict, "AutomationId", () => currentNode.AutomationId);
+            AddKeySafe(propertiesDict, "ProcessId", () => currentNode.ProcessId.ToString(CultureInfo.InvariantCulture));
+            AddKeySafe(propertiesDict, "TopLeft", () => currentNode.BoundingRectangle.TopLeft.ToString());
+            AddKeySafe(propertiesDict, "BottomRight", () => currentNode.BoundingRectangle.BottomRight.ToString());
 
             PropertiesDict = propertiesDict;
+        }
+
+        private void AddKeySafe(Dictionary<string, string> dict, string key, Func<string> getter) 
+        {
+            string result;
+
+            try
+            {
+                result = getter();
+                dict.Add(key, result);
+            }
+            catch { }
         }
 
         private void HighlightElement()

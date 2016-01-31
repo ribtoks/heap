@@ -4,7 +4,8 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:myUiVerify="clr-namespace:MyUiVerify"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        Title="MainWindow" Height="450" Width="625">
+        Title="MainWindow" Height="450" Width="625"
+        Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -47,12 +48,20 @@
             </Grid>
             <GridSplitter Grid.Column="1" Width="3" ShowsPreview="False" HorizontalAlignment="Center"/>
             <Grid Grid.Column="2" >
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SelectedElement.PropertiesDict}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Key" Binding="{Binding Key}" />
-                        <DataGridTextColumn Header="Value" Binding="{Binding Value}" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                <StackPanel Orientation="Vertical">
+                    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SelectedElement.PropertiesDict}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Key" IsReadOnly="True" Binding="{Binding Key}" />
+                            <DataGridTextColumn Header="Value" IsReadOnly="True" Binding="{Binding Value}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" Margin="20" Height="30">
+                        <TextBlock VerticalAlignment="Center">Width:</TextBlock>
+                        <TextBox VerticalAlignment="Center" Width="100" Height="30" VerticalContentAlignment="Center" Margin="20 0 0 0" 
+                                 Text="{Binding Path=SelectedElement.ElementWidth, UpdateSourceTrigger=Explicit}"
+                                 IsEnabled="{Binding SelectedElement.IsWidthChangable}"/>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
         </Grid>
     </Grid>
