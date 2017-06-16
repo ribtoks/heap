@@ -1,0 +1,14 @@
+This simple script is used to tell whether some new topics appeared in some forum. Filtering on topic keywords is present.
+Uses XPath. Can be used with any forum kind. Each instance can use own config.
+
+For Windows install Ruby from RubyInstller and DevTools with installation instructions on same page.
+
+Dependencies:
+gem install nokogiri (For Windows in case of x64 ruby and DevTools "gem install nokogiri --prerelease")
+gem install parseconfig
+gem install unicode_utils
+gem ruby-growl
+
+growl - only for Windows notifications
+
+Look for installation instuctions in the INSTALL file.

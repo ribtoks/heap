@@ -1,0 +1,26 @@
+Linux instructions:
+
+Install ruby, rubygem. Run in terminal
+sudo gem install nokogiri
+sudo gem install parseconfig
+sudo gem install unicode_utils
+
+run in terminal ./run_listener.sh
+
+**********************************
+
+Windows instructions:
+
+Install ruby (e.g. from http://rubyinstaller.org)
+
+Install needed gems by running `cmd` and executing following commands:
+gem install nokogiri
+gem install parseconfig
+gem install unicode_utils
+
+Install growl notifications system (e.g. from http://growl.info)
+
+open scripts folder in windows command line promt
+run in cmd promt 'run_listener.cmd'
+(windows users can also run `chcp 65001` in cmd promt in order to change code page to 65001 - unicode)
+
