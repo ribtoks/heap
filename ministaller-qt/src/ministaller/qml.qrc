@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>DetailsWindow.qml</file>
+        <file>StyledBusyIndicator.qml</file>
+        <file>StyledButton.qml</file>
+        <file>StyledText.qml</file>
+        <file>Colors.js</file>
+    </qresource>
+</RCC>

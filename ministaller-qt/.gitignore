@@ -1,0 +1,6 @@
+build-*/
+*.pro.user
+*.o
+*.autosave
+~*
+3rdparties/

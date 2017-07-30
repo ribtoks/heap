@@ -1,0 +1,90 @@
+# version format
+version: 0.1.{build}-{branch}
+
+os: Visual Studio 2015
+
+platform:
+  - x64
+
+environment:
+  QTDIR: C:\Qt\5.6\msvc2015_64
+
+branches:
+  # blacklist
+  except:
+    - gh-pages
+
+configuration:
+  - debug
+
+# - release
+
+# Do not build on tags (GitHub only)
+skip_tags: false
+
+skip_commits:
+  message: /.*\[ci skip\]/       # Regex for matching commit message
+
+# clone directory
+clone_folder: c:\projects\ministaller
+
+# set clone depth
+clone_depth: 3                      # clone entire repository history if not defined
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - configuration: release
+
+install:
+  - if %QTDIR:_64=%==%QTDIR% ( set ARCH=x86 ) else set ARCH=x64
+  - cmd: set PATH=%PATH%;%QTDIR%\bin
+  - qmake -v
+
+before_build:
+  - cmd: 'echo %cd%'
+  - cmd: 'cd c:\projects\ministaller'
+  - cmd: 'call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %ARCH%'
+
+build_script:
+  - cmd: 'echo %cd%'
+  - cmd: 'cd src'
+  - cmd: 'cd 3rdparties\zlib-project'
+  - qmake "CONFIG+=%configuration%" zlib.pro
+  - nmake.exe
+  - cmd: 'copy %configuration%\z.* ..\..\libs'
+  - cmd: 'cd ..\quazip\quazip'
+  - qmake "CONFIG+=%configuration%" quazip.pro
+  - nmake.exe
+  - cmd: 'copy %configuration%\quazip.* ..\..\..\libs'
+  - cmd: 'cd c:\projects\ministaller\src\ministaller'
+  - qmake "CONFIG+=%configuration% appveyor" ministaller.pro
+  - nmake.exe
+
+after_build:
+  - cmd: 'echo %cd%'
+  - cd %configuration%
+  - windeployqt.exe ministaller.exe
+  - xcopy /Y /s c:\projects\ministaller\src\libs .
+  - del *.obj
+  - del *.cpp
+  - cd ..
+  - 7z a ministaller-%configuration%.zip %configuration%
+  - appveyor PushArtifact ministaller-%configuration%.zip
+
+before_test:
+  - cmd: 'echo %cd%'
+  - cd %configuration%
+  - ps: wget 'https://github.com/Ribtoks/xpiks/releases/download/v1.1/Xpiks-qt-v1.1.3.zip' -OutFile "$pwd\xpiks-qt-v1.1.3.zip"
+  - ps: 7z.exe x xpiks-qt-v1.1.3.zip -oC:\xpiks-qt-v1.1.3
+  - ps: 7z.exe x xpiks-qt-v1.1.3.zip -oC:\xpiks-qt-v1.1.3-revert
+  - ps: 7z.exe x xpiks-qt-v1.1.3.zip -oC:\xpiks-qt-v1.1.3-orig
+  - ps: wget 'https://github.com/Ribtoks/xpiks/releases/download/v1.3.4/xpiks-qt-v1.3.4.zip' -OutFile "$pwd\xpiks-qt-v1.3.4.zip"
+  - ps: 7z.exe x xpiks-qt-v1.3.4.zip -oC:\xpiks-qt-v1.3.4
+
+test_script:
+  - cmd: 'echo %cd%'
+  - cmd: 'ministaller.exe -i "c:/xpiks-qt-v1.1.3/xpiks-qt-v1.1.3" -p "xpiks-qt-v1.3.4.zip" -s'
+  - diff -r c:\xpiks-qt-v1.1.3\xpiks-qt-v1.1.3 c:\xpiks-qt-v1.3.4\xpiks-qt-v1.3.4
+  - cmd: 'ministaller.exe -i "c:/xpiks-qt-v1.1.3-revert/xpiks-qt-v1.1.3" -p "xpiks-qt-v1.3.4.zip" -s -l'
+  - diff -r c:\xpiks-qt-v1.1.3-revert\xpiks-qt-v1.1.3 c:\xpiks-qt-v1.1.3-orig\xpiks-qt-v1.1.3
