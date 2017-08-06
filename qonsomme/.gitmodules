@@ -1,0 +1,3 @@
+[submodule "vendors/exiv2"]
+	path = vendors/exiv2
+	url = https://github.com/Exiv2/exiv2
