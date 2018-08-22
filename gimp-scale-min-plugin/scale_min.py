@@ -29,7 +29,7 @@ def plugin_main(minsize=6000000, savecopy=TRUE, processdir=TRUE, dirname=""):
     if processdir:
         for filename in os.listdir(dirname):
             try:
-                if filename.lower().split(".")[-1] in ("png", "jpg"):
+                if filename.lower().split(".")[-1] in ("png", "jpg", "jpeg"):
                     #import pdb as debug; debug.set_trace()
                     fname = os.path.join(dirname, filename)
                     img = pdb.gimp_file_load(fname, fname)
