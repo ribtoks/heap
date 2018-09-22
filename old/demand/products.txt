@@ -1,0 +1,5 @@
+1 bread
+2 milk
+3 banana
+4 popcorn
+5 potato

@@ -1,0 +1,8 @@
+1 bread 2 milk  ( 66.6667% )
+1 bread 2 milk 3 banana  ( 33.3333% )
+1 bread 2 milk 5 potato  ( 33.3333% )
+1 bread 3 banana  ( 33.3333% )
+1 bread 5 potato  ( 33.3333% )
+2 milk 3 banana  ( 33.3333% )
+2 milk 4 popcorn  ( 33.3333% )
+2 milk 5 potato  ( 33.3333% )
