@@ -1,5 +1,10 @@
 #!/usr/bin/ruby
 
+# script used to sort files managed by Notable into separate directories (as it should be)
+# run with
+# ruby /path/to/rearrange_notes.rb /path/to/notable/root /path/to/output/root
+# remember about assets!
+
 require 'fileutils'
 
 dirpath = ARGV[0]
