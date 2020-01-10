@@ -13,7 +13,7 @@ destpath = ARGV[1]
 opts = {}
 opts[:encoding] = "UTF-8"
 
-def remove_header(filepath)
+def fix_cotents(filepath)
   text = File.read(filepath)
   out = File.open(filepath, "w")
   skipping_header = 0
@@ -32,6 +32,8 @@ def remove_header(filepath)
    
    next if skipping_header == 1   
    
+   # fix attachment to be in the same directory of the file in /attachment/ dir
+   line.sub! '](@attachment/', '](./attachment/'
    out.puts line
   end
 end
@@ -46,6 +48,6 @@ Dir.foreach(dirpath, opts) do |filename|
 	puts "Copying #{filepath} to #{destination}"
 	FileUtils.mkdir_p destination
     FileUtils.cp(filepath, destination)
-	remove_header(destination + '/' + filename)
+	fix_cotents(destination + '/' + filename)
   }
 end
