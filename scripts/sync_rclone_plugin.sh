@@ -15,6 +15,6 @@ REMOTE_NAME="Dropbox"
 REMOTE_PATH="MyDropboxCrypt:/"
 LOCAL_PATH="~/CloudSync/"
 
-echo "↑ Sync To ${REMOTE_NAME} | terminal=true bash=\"rclone sync ${LOCAL_PATH} ${REMOTE_PATH} -P\""
-echo "↓ Sync From ${REMOTE_NAME} | terminal=true bash=\"rclone sync ${REMOTE_PATH} ${LOCAL_PATH} -P\""
+echo "↑ Sync To ${REMOTE_NAME} | terminal=true bash=\"rclone copy ${LOCAL_PATH} ${REMOTE_PATH} -P\""
+echo "↓ Sync From ${REMOTE_NAME} | terminal=true bash=\"rclone copy ${REMOTE_PATH} ${LOCAL_PATH} -P\""
 
