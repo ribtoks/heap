@@ -1,4 +1,3 @@
-
 #!/usr/bin/ruby
 
 def type_map(t)
