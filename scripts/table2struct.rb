@@ -1,4 +1,16 @@
+
 #!/usr/bin/ruby
+
+def type_map(t)
+  tm = {
+    "boolean" => "bool",
+    "integer" => "uint32",
+    "text" => "string",
+    "timestamp" => "time.Time"
+  }
+  return tm[t] if tm.has_key? t
+  t
+end
 
 ARGF.each do |line|
   break if line.strip.empty?
@@ -8,5 +20,6 @@ ARGF.each do |line|
   type.gsub!(/[^a-z]/i, '')
   parts = field.split('_')
   name = parts.map{|p| p == "id" ? p.upcase : p.capitalize}.join
-  puts "#{name} #{type} `db:\"#{field}\" json:\"#{field}\"`"
+  t = type_map(type)
+  puts "#{name} #{t} `db:\"#{field}\" json:\"#{field}\"`"
 end
